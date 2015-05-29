@@ -1,0 +1,91 @@
+# PAGESPEED START
+
+pagespeed on;
+
+pagespeed RewriteLevel PassThrough;
+#pagespeed RewriteLevel CoreFilters;
+#pagespeed RewriteLevel OptimizeForBandwidth;
+
+pagespeed EnableFilters canonicalize_javascript_libraries;
+pagespeed EnableFilters add_head;
+pagespeed EnableFilters convert_meta_tags;
+#pagespeed EnableFilters elide_attributes;
+#pagespeed EnableFilters pedantic;
+
+pagespeed EnableFilters defer_javascript;
+pagespeed EnableFilters rewrite_javascript;
+pagespeed EnableFilters combine_javascript;
+pagespeed EnableFilters inline_javascript;
+pagespeed JsInlineMaxBytes 2048;
+pagespeed EnableFilters outline_javascript;
+pagespeed JsOutlineMinBytes 3000;
+pagespeed EnableFilters include_js_source_maps;
+pagespeed UseExperimentalJsMinifier on;
+
+#pagespeed EnableFilters collapse_whitespace;
+pagespeed EnableFilters combine_heads;
+pagespeed EnableFilters extend_cache;
+#pagespeed EnableFilters extend_cache_pdfs;
+#pagespeed AnalyticsID <30473017-1>;
+pagespeed EnableFilters insert_dns_prefetch;
+
+pagespeed EnableFilters inline_import_to_link;
+pagespeed EnableFilters rewrite_css,sprite_images;
+pagespeed EnableFilters combine_css;
+pagespeed EnableFilters flatten_css_imports;
+pagespeed EnableFilters inline_css;
+pagespeed CssImageInlineMaxBytes 4096;
+pagespeed EnableFilters move_css_to_head;
+pagespeed EnableFilters move_css_above_scripts;
+pagespeed EnableFilters outline_css;
+pagespeed CssOutlineMinBytes 1000;
+pagespeed EnableFilters prioritize_critical_css;
+pagespeed EnableFilters rewrite_style_attributes_with_url;
+pagespeed EnableFilters inline_google_font_css;
+#pagespeed EnableFilters inline_preview_images;
+#pagespeed MaxInlinedPreviewImagesIndex -1;
+#pagespeed EnableFilters resize_mobile_images;
+#pagespeed EnableFilters lazyload_images;
+#pagespeed EnableFilters rewrite_images;
+#pagespeed EnableFilters inline_images;
+#pagespeed ImageInlineMaxBytes 2048;
+#pagespeed CssImageInlineMaxBytes 3072;
+#pagespeed EnableFilters recompress_images;
+#pagespeed EnableFilters remove_comments;
+#pagespeed EnableFilters remove_quotes;
+#pagespeed EnableFilters convert_gif_to_png;
+#pagespeed EnableFilters convert_jpeg_to_progressive;
+#pagespeed EnableFilters convert_png_to_jpeg;
+#pagespeed EnableFilters convert_jpeg_to_webp;
+#pagespeed EnableFilters recompress_jpeg;
+#pagespeed EnableFilters recompress_png;
+#pagespeed EnableFilters resize_images;
+#pagespeed EnableFilters strip_image_color_profile;
+#pagespeed EnableFilters strip_image_meta_data;
+#pagespeed EnableFilters jpeg_subsampling;
+#pagespeed EnableFilters dedup_inlined_images;
+#pagespeed EnableFilters fallback_rewrite_css_urls;
+#pagespeed EnableFilters trim_urls;
+
+pagespeed FileCachePath "/dev/shm/ngx_cache";
+pagespeed FileCacheSizeKb            1024000;
+pagespeed FileCacheCleanIntervalMs   3600000;
+pagespeed FileCacheInodeLimit        500000;
+
+#pagespeed CreateSharedMemoryMetadataCache "/dev/shm/ngx_shared" 6400;
+
+pagespeed LRUCacheKbPerProcess     8192;
+pagespeed LRUCacheByteLimit        16384;
+#pagespeed EnableFilters in_place_optimize_for_browser;
+pagespeed InPlaceResourceOptimization on;
+
+#pagespeed Statistics on;
+#pagespeed StatisticsLogging on;
+#pagespeed LogDir /dev/shm/ngx_stats;
+#pagespeed AdminPath /pagespeed_admin;
+
+#location ~ ^/pagespeed_admin {
+#       allow YOURIPADDRESS;
+#       deny all;
+#}
+
