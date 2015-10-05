@@ -1,4 +1,4 @@
-# Compile nginx with conditional purge for fastcgi_cache, SPDY and Google pagespeed
+# Compile nginx with conditional purge for fastcgi_cache, http2 and Google pagespeed
 
 1 Prepare pagespeed module    - https://developers.google.com/speed/pagespeed/module/build_ngx_pagespeed_from_source
 2 Prepare cache pure module   - http://labs.frickle.com/nginx_ngx_cache_purge/
